@@ -1,9 +1,9 @@
 import axios from 'axios';
 // import interceptor from '../utils/interceptor';
 
-const CHARGE_API = "http://localhost:3001/master-handler/apps/orderify/api/add-charges/trial";
-const CHARGE_API1 = "http://localhost:3001/master-handler/apps/orderify";
-const RETURN_API = "http://orderify.paginale.com/";
+const CHARGE_API = "http://75.119.155.73:3002/master-handler/apps/orderify/api/add-charges/trial";
+const CHARGE_API1 = "http://75.119.155.73:3002/master-handler/apps/orderify";
+const RETURN_API = "http://codify.paginale.com/";
 const params = window.location.search.split("?")[1].split("&");
 const token = params[0].split("=")[1]
 const shop = params[1].split("=")[1]
