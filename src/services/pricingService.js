@@ -20,7 +20,7 @@ class PricingService {
             token:token,
             recurring_application_charge: {
                 name: "Codify",
-                price: 0.001,
+                price: 0.01,
                 return_url: RETURN_API,
                 trial_days: 10,
                 test: true
