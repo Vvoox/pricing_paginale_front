@@ -4,23 +4,25 @@ import axios from 'axios';
 const CHARGE_API = "https://gateway.paginale.com/master-handler/apps/orderify/api/add-charges/trial";
 const CHARGE_API1 = "https://gateway.paginale.com/master-handler/apps/orderify";
 const RETURN_API = "http://codify.paginale.com/";
-const params = window.location.search.split("?")[1].split("&");
-const token = params[0].split("=")[1]
-const shop = params[1].split("=")[1]
+// const params = window.location.search.split("?")[1].split("&");
+// const token = params[0].split("=")[1]
+const token = ""
+// const shop = params[1].split("=")[1]
+const shop = ""
 console.log(shop)
 console.log(token)
 
 class PricingService {
 
-    addBasicCharge_month(){
+    addFreeCharge(){
 
         const charges ={
-            plan:"basic_month",
+            plan:"free",
             shop:shop,
             token:token,
             recurring_application_charge: {
-                name: "Orderify",
-                price: 6.99,
+                name: "Codify",
+                price: 0,
                 return_url: RETURN_API,
                 trial_days: 10,
                 test: true
@@ -28,13 +30,29 @@ class PricingService {
         };
          return axios.post(CHARGE_API, charges);
     }
+    addBasicCharge_month(){
+
+        const charges ={
+            plan:"basic_month",
+            shop:shop,
+            token:token,
+            recurring_application_charge: {
+                name: "Codify",
+                price: 6.99,
+                return_url: RETURN_API,
+                trial_days: 10,
+                test: true
+            }
+        };
+        return axios.post(CHARGE_API, charges);
+    }
     addBasicCharge_yearly(){
             const charges ={
                 plan:"basic_year",
                 shop:shop,
                 token:token,
                 recurring_application_charge: {
-                name: "Orderify",
+                name: "Codify",
                 price: 79.99,
                 return_url: RETURN_API,
                 trial_days: 10,
@@ -50,7 +68,7 @@ class PricingService {
             shop:shop,
             token:token,
             recurring_application_charge: {
-                name: "Orderify",
+                name: "Codify",
                 price: 149.99,
                 return_url: RETURN_API,
                 trial_days: 10,
@@ -65,7 +83,7 @@ class PricingService {
             shop:shop,
             token:token,
             recurring_application_charge: {
-                name: "Orderify",
+                name: "Codify",
                 price: 149.99,
                 return_url: RETURN_API,
                 trial_days: 10,
@@ -81,7 +99,7 @@ class PricingService {
             shop:shop,
             token:token,
             recurring_application_charge: {
-                name: "Orderify",
+                name: "Codify",
                 price: 13.99,
                 return_url: RETURN_API,
                 trial_days: 10,
@@ -96,7 +114,7 @@ class PricingService {
             shop:shop,
             token:token,
             recurring_application_charge: {
-                name: "Orderify",
+                name: "Codify",
                 price: 165.99,
                 return_url: RETURN_API,
                 trial_days: 10,

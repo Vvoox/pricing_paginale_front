@@ -3,6 +3,13 @@ import React, { useState } from "react"
 import { jsx, css } from "@emotion/core"
 import styled from "@emotion/styled"
 import Payment from "./Payment"
+import slogan from "./icon.png";
+import {
+  Heading,
+  HStack,
+  Image,
+  Spacer,
+} from "@chakra-ui/react";
 
 import PricingService from "./services/pricingService";
 
@@ -43,6 +50,7 @@ function App() {
   //   )
   // }
 
+    const startedFreePlan = (e) => {PricingService.addFreeCharge().then(r => {window.location.replace(r.data);});}
     const startedBasicPlanMonthly= (e) => {PricingService.addBasicCharge_month().then(r => {window.location.replace(r.data);});}
     const startedCreativePlanMonthly= (e) => {PricingService.addCreativeCharge_monthly().then(r => {window.location.replace(r.data);});}
     const startedPreiumPlanMonthly= (e) => {PricingService.addPremiumCharge_monthly().then(r => {window.location.replace(r.data);});}
@@ -53,10 +61,25 @@ function App() {
 
 
     return (
-    <div className="flex flex-column flex-row-ns pa3 pa5-ns">
+        <div>
+          <div css={css`
+        flex: 1;
+        height: 70px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+      `}>
+            <HStack boxShadow={"md"} justify={"center"} p="3" align="center">
+
+              <Image src={slogan} height={50}/>
+              <Spacer/>
+
+            </HStack>
+          </div>
+          <div className="flex flex-column flex-row-ns pa3 pa5-ns">
+
       <div css={css`
         flex: 1;
-        margin-bottom: 30px;
+        //margin-bottom: 50px;
+        margin-top: 150px;
         @media screen and (min-width: 768px) {
           padding-right: 40px;
         }
@@ -79,13 +102,105 @@ function App() {
             Yearly
           </span>
         </div>
+
       </div>
+            <div css={css`
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-width: 260px;
+        margin-top: 150px;
+        border: solid 1px #d7d7d7;
+        @media screen and (min-width: 768px) {
+          margin-right: 40px;
+        }
+      `}>
+              {term === "year" ?
+                  <React.Fragment>
+
+                    <div className="bg-blue pa3">
+                      <h1 className="white ma0 fw4 f3">Free plan</h1>
+                      <h2 className="white flex items-start mb0">
+                        <small className="fw4">$</small>
+                        <span className="f1 fw6">00.00</span>
+                        <small className="self-end fw4">/year</small>
+                      </h2>
+                    </div>
+                    <div className="pa3" css={css`
+                      flex: 1;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: space-between;
+                    `}>
+                      <List>
+                        <li> limited to 20 orders per month</li>
+                        <li> Up to 3 fields in your forms </li>
+                        <li> Thank you page </li>
+                        <li> No Upsells page  </li>
+                      </List>
+
+                      <button
+                          className={`db br2 tc w-100 mt4 pointer bg-lightest-blue fw6 dark-blue`}
+                          css={css`
+                            padding: 14px;
+                            border: none;
+                            -webkit-appearance: none;
+                            outline: none;
+                          `}
+                          onClick={() => startedFreePlan()}
+                      >
+                        Get Started
+                      </button>
+                    </div>
+                  </React.Fragment>
+                  :
+                  <React.Fragment>
+
+                    <div className="bg-blue pa3">
+                      <h1 className="white ma0 fw4 f3">Free plan</h1>
+                      <h2 className="white flex items-start mb0">
+                        <small className="fw4">$</small>
+                        <span className="f1 fw6">00.00</span>
+                        <small className="self-end fw4">/month</small>
+                      </h2>
+                    </div>
+                    <div className="pa3" css={css`
+                      flex: 1;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: space-between;
+                    `}>
+                      <List>
+                        <li> limited to 20 orders per month</li>
+                        <li> Up to 3 fields in your forms </li>
+                        <li> Thank you page </li>
+                        <li> No Upsells page  </li>
+                      </List>
+
+                      <button
+                          className={`db br2 tc w-100 mt4 pointer bg-lightest-blue fw6 dark-blue`}
+                          css={css`
+                            padding: 14px;
+                            border: none;
+                            -webkit-appearance: none;
+                            outline: none;
+                          `}
+                          onClick={() => startedFreePlan()}
+                      >
+                        Get Started
+                      </button>
+                    </div>
+                  </React.Fragment>
+              }
+            </div>
       <div css={css`
         flex: 1;
         display: flex;
         flex-direction: column;
         min-width: 260px;
-        margin-bottom: 30px;
+        //margin-bottom: 30px;
+                margin-top: 150px;
+
         border: solid 1px #d7d7d7;
         @media screen and (min-width: 768px) {
           margin-right: 40px;
@@ -93,11 +208,12 @@ function App() {
       `}>
         {term === "year" ?
           <React.Fragment>
+
             <div className="bg-blue pa3">
               <h1 className="white ma0 fw4 f3">Basic plan</h1>
               <h2 className="white flex items-start mb0">
                 <small className="fw4">$</small>
-                <span className="f1 fw6">79.99</span>
+                <span className="f1 fw6">102.99</span>
                 <small className="self-end fw4">/year</small>
               </h2>
             </div>
@@ -108,9 +224,10 @@ function App() {
               justify-content: space-between;
             `}>
               <List>
-                <li> 5 Forms maximum</li>
-                <li> Thank you page</li>
-                <li> Upsells page</li>
+                <li> limited to 100 orders per month </li>
+                <li> Up to 3 fields in your forms </li>
+                <li> Thank you page </li>
+                <li> No Upsells page  </li>
               </List>
 
               <button
@@ -133,7 +250,7 @@ function App() {
               <h1 className="white ma0 fw4 f3">Basic plan</h1>
               <h2 className="white flex items-start mb0">
                 <small className="fw4">$</small>
-                <span className="f1 fw6">6.99</span>
+                <span className="f1 fw6">8.99</span>
                 <small className="self-end fw4">/month</small>
               </h2>
             </div>
@@ -144,9 +261,10 @@ function App() {
               justify-content: space-between;
             `}>
               <List>
-                      <li> 5 Forms maximum</li>
-                      <li> Thank you page</li>
-                      <li> Upsells page</li>
+                <li> limited to 100 orders per month </li>
+                <li> Up to 3 fields in your forms </li>
+                <li> Thank you page </li>
+                <li> No Upsells page  </li>
               </List>
 
               <button
@@ -171,7 +289,10 @@ function App() {
         display: flex;
         flex-direction: column;
         min-width: 260px;
-        margin-bottom: 30px;
+        //margin-bottom: 30px;        
+         margin-top: 150px;
+
+        
         border: solid 1px #d7d7d7;
         @media screen and (min-width: 768px) {
           margin-right: 40px;
@@ -183,7 +304,7 @@ function App() {
                         <h1 className="white ma0 fw4 f3">Creative plan</h1>
                         <h2 className="white flex items-start mb0">
                             <small className="fw4">$</small>
-                            <span className="f1 fw6">149.99</span>
+                            <span className="f1 fw6">163.99</span>
                             <small className="self-end fw4">/year</small>
                         </h2>
                     </div>
@@ -194,9 +315,10 @@ function App() {
               justify-content: space-between;
             `}>
                         <List>
-                            <li> 10 forms maximum</li>
-                            <li> Thank you page</li>
-                            <li> Upsells page with 5 products maximum</li>
+                            <li> Unlimited orders </li>
+                            <li> Up to 7 fields in your forms </li>
+                            <li> Enabled Thank you page </li>
+                            <li> Enabled Upsells page up to 2 products  </li>
                         </List>
 
                         <button
@@ -219,7 +341,7 @@ function App() {
                         <h1 className="white ma0 fw4 f3">Creative plan</h1>
                         <h2 className="white flex items-start mb0">
                             <small className="fw4">$</small>
-                            <span className="f1 fw6">12.99</span>
+                            <span className="f1 fw6">13.99</span>
                             <small className="self-end fw4">/month</small>
                         </h2>
                     </div>
@@ -229,11 +351,12 @@ function App() {
               flex-direction: column;
               justify-content: space-between;
             `}>
-                        <List>
-                            <li> 10 forms maximum</li>
-                            <li> Thank you page</li>
-                            <li> Upsells page with 5 products maximum</li>
-                        </List>
+                      <List>
+                        <li> Unlimited orders </li>
+                        <li> Up to 7 fields in your forms </li>
+                        <li> Enabled Thank you page </li>
+                        <li> Enabled Upsells page up to 2 products </li>
+                      </List>
 
                         <button
                             className={`db br2 tc w-100 mt4 pointer bg-lightest-blue fw6 dark-blue`}
@@ -256,7 +379,9 @@ function App() {
         display: flex;
         flex-direction: column;
         min-width: 260px;
-        margin-bottom: 30px;
+        //margin-bottom: 30px;
+                margin-top: 150px;
+
         border: solid 1px #d7d7d7;
         @media screen and (min-width: 768px) {
           margin-right: 40px;
@@ -268,7 +393,7 @@ function App() {
                         <h1 className="white ma0 fw4 f3">Premium plan</h1>
                         <h2 className="white flex items-start mb0">
                             <small className="fw4">$</small>
-                            <span className="f1 fw6">165.99</span>
+                            <span className="f1 fw6">185.99</span>
                             <small className="self-end fw4">/year</small>
                         </h2>
                     </div>
@@ -279,9 +404,10 @@ function App() {
               justify-content: space-between;
             `}>
                         <List>
-                            <li> Unlimited number of forms</li>
-                            <li> Thank you page</li>
-                            <li> Upsells page with unlimited products suggestions</li>
+                            <li> Unlimited orders</li>
+                            <li> Add unlimited number of fields in your forms </li>
+                            <li> Enabled Thank you page </li>
+                            <li> Enabled Upsells page and unlimited products suggestions  </li>
                         </List>
 
                         <button
@@ -304,7 +430,7 @@ function App() {
                         <h1 className="white ma0 fw4 f3">Premium plan</h1>
                         <h2 className="white flex items-start mb0">
                             <small className="fw4">$</small>
-                            <span className="f1 fw6">13.99</span>
+                            <span className="f1 fw6">15.99</span>
                             <small className="self-end fw4">/month</small>
                         </h2>
                     </div>
@@ -314,11 +440,12 @@ function App() {
               flex-direction: column;
               justify-content: space-between;
             `}>
-                        <List>
-                            <li> Unlimited number of forms</li>
-                            <li> Thank you page</li>
-                            <li> Upsells page with unlimited products suggestions</li>
-                        </List>
+                      <List>
+                        <li> Unlimited orders</li>
+                        <li> Add unlimited number of fields in your forms </li>
+                        <li> Enabled Thank you page </li>
+                        <li> Enabled Upsells page and unlimited products suggestions  </li>
+                      </List>
 
                         <button
                             className={`db br2 tc w-100 mt4 pointer bg-lightest-blue fw6 dark-blue`}
@@ -355,6 +482,7 @@ function App() {
         />
       }
     </div>
+        </div>
   )
 }
 
