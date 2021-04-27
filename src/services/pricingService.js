@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const CHARGE_API = "https://gateway.paginale.com/master-handler/apps/orderify/api/add-charges/trial";
 const CHARGE_API1 = "https://gateway.paginale.com/master-handler/apps/orderify";
-const RETURN_API = "http://codify.paginale.com/";
+const RETURN_API = "https://codify.paginale.com/";
 // const params = window.location.search.split("?")[1].split("&");
 // const token = params[0].split("=")[1]
 const token = ""
