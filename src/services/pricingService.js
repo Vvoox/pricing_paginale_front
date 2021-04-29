@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const CHARGE_API = "http://localhost:3002/master-handler/apps/codify/api/add-charges/trial";
 // const CHARGE_API1 = "http://localhost:3002/master-handler/apps/codify";
-const RETURN_API = "https://codify.paginale.com/";
+// const RETURN_API = "https://codify.paginale.com/";
 const params = window.location.search.split("?")[1].split("&");
 const token = params[0].split("=")[1]
 const shop = params[1].split("=")[1]
@@ -17,7 +17,7 @@ class PricingService {
         const charges ={
             plan:"free",
             shop:shop,
-            token:token,
+            token:token
         };
          return axios.post(CHARGE_API, charges);
     }
@@ -26,7 +26,7 @@ class PricingService {
         const charges ={
             plan:"basic_month",
             shop:shop,
-            token:token,
+            token:token
         };
         return axios.post(CHARGE_API, charges);
     }
@@ -34,7 +34,7 @@ class PricingService {
             const charges ={
                 plan:"basic_year",
                 shop:shop,
-                token:token,
+                token:token
         };
         return axios.post(CHARGE_API, charges);
     }
@@ -43,7 +43,7 @@ class PricingService {
         const charges ={
             plan:"creative_month",
             shop:shop,
-            token:token,
+            token:token
         };
         return axios.post(CHARGE_API, charges);
     }
@@ -51,7 +51,7 @@ class PricingService {
         const charges ={
             plan:"creative_year",
             shop:shop,
-            token:token,
+            token:token
         };
         return axios.post(CHARGE_API, charges);
     }
@@ -60,7 +60,7 @@ class PricingService {
         const charges ={
             plan:"premium_month",
             shop:shop,
-            token:token,
+            token:token
         };
         return axios.post(CHARGE_API, charges);
     }
@@ -68,7 +68,7 @@ class PricingService {
         const charges ={
             plan:"premium_year",
             shop:shop,
-            token:token,
+            token:token
         };
         return axios.post(CHARGE_API, charges);
     }
