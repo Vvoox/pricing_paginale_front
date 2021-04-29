@@ -1,8 +1,8 @@
 import axios from 'axios';
 // import interceptor from '../utils/interceptor';
 
-// const CHARGE_API = "https://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
-const CHARGE_API = "https://gateway.paginale.com/add-charges";
+const CHARGE_API = "https://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
+// const CHARGE_API = "https://gateway.paginale.com/add-charges";
 // const CHARGE_API1 = "http://localhost:3002/master-handler/apps/codify";
 // const RETURN_API = "https://codify.paginale.com/";
 // const params = window.location.search.split("?")[1].split("&");
