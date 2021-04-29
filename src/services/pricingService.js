@@ -20,7 +20,6 @@ class PricingService {
             shop:shop,
             token:token
         };
-        window.open('', 'TheWindow');
          return axios.post(CHARGE_API, charges);
     }
     addBasicCharge_month(){
