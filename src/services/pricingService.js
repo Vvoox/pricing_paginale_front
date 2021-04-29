@@ -4,11 +4,11 @@ import axios from 'axios';
     const CHARGE_API = "https://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
 // const CHARGE_API1 = "http://localhost:3002/master-handler/apps/codify";
 // const RETURN_API = "https://codify.paginale.com/";
-const params = window.location.search.split("?")[1].split("&");
-const tk = params[0].split("=")[1]
-const shop = params[1].split("=")[1]
+// const params = window.location.search.split("?")[1].split("&");
+const token = window.location.search.split("?")[1].split("&")[0].split("=")[1]
+const shop = window.location.search.split("?")[1].split("&")[1].split("=")[1]
 console.log(shop)
-console.log(tk)
+console.log(token)
 
 class PricingService {
 
@@ -16,7 +16,7 @@ class PricingService {
         const charges ={
             plan:"free",
             shop:shop,
-            token:tk
+            token:token
         };
          return axios.post(CHARGE_API, charges);
     }
