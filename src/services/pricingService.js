@@ -1,8 +1,8 @@
 import axios from 'axios';
 // import interceptor from '../utils/interceptor';
 
-const CHARGE_API = "https://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
-const CHARGE_API1 = "https://gateway.paginale.com/master-handler/apps/codify";
+const CHARGE_API = "http://localhost:3002/master-handler/apps/codify/api/add-charges/trial";
+// const CHARGE_API1 = "http://localhost:3002/master-handler/apps/codify";
 const RETURN_API = "https://codify.paginale.com/";
 const params = window.location.search.split("?")[1].split("&");
 const token = params[0].split("=")[1]
@@ -18,13 +18,6 @@ class PricingService {
             plan:"free",
             shop:shop,
             token:token,
-            recurring_application_charge: {
-                name: "Codify",
-                price: 0.01,
-                return_url: RETURN_API,
-                trial_days: 10,
-                test: true
-            }
         };
          return axios.post(CHARGE_API, charges);
     }
@@ -34,13 +27,6 @@ class PricingService {
             plan:"basic_month",
             shop:shop,
             token:token,
-            recurring_application_charge: {
-                name: "Codify",
-                price: 6.99,
-                return_url: RETURN_API,
-                trial_days: 10,
-                test: true
-            }
         };
         return axios.post(CHARGE_API, charges);
     }
@@ -49,13 +35,6 @@ class PricingService {
                 plan:"basic_year",
                 shop:shop,
                 token:token,
-                recurring_application_charge: {
-                name: "Codify",
-                price: 79.99,
-                return_url: RETURN_API,
-                trial_days: 10,
-                test: true
-            }
         };
         return axios.post(CHARGE_API, charges);
     }
@@ -65,13 +44,6 @@ class PricingService {
             plan:"creative_month",
             shop:shop,
             token:token,
-            recurring_application_charge: {
-                name: "Codify",
-                price: 149.99,
-                return_url: RETURN_API,
-                trial_days: 10,
-                test: true
-            }
         };
         return axios.post(CHARGE_API, charges);
     }
@@ -80,13 +52,6 @@ class PricingService {
             plan:"creative_year",
             shop:shop,
             token:token,
-            recurring_application_charge: {
-                name: "Codify",
-                price: 149.99,
-                return_url: RETURN_API,
-                trial_days: 10,
-                test: true
-            }
         };
         return axios.post(CHARGE_API, charges);
     }
@@ -96,13 +61,6 @@ class PricingService {
             plan:"premium_month",
             shop:shop,
             token:token,
-            recurring_application_charge: {
-                name: "Codify",
-                price: 13.99,
-                return_url: RETURN_API,
-                trial_days: 10,
-                test: true
-            }
         };
         return axios.post(CHARGE_API, charges);
     }
@@ -111,13 +69,6 @@ class PricingService {
             plan:"premium_year",
             shop:shop,
             token:token,
-            recurring_application_charge: {
-                name: "Codify",
-                price: 165.99,
-                return_url: RETURN_API,
-                trial_days: 10,
-                test: true
-            }
         };
         return axios.post(CHARGE_API, charges);
     }
