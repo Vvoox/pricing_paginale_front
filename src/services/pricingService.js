@@ -9,6 +9,7 @@ const token = window.location.search.split("?")[1].split("&")[0].split("=")[1]
 const shop = window.location.search.split("?")[1].split("&")[1].split("=")[1]
 console.log(shop)
 console.log(token)
+console.log(window.location.search.split("?")[1].split("&"))
 
 class PricingService {
 
