@@ -1,11 +1,11 @@
 import axios from 'axios';
 // import interceptor from '../utils/interceptor';
 
-const CHARGE_API = "https://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
+    const CHARGE_API = "http://localhost:3002/master-handler/apps/codify/api/add-charges/trial";
 // const CHARGE_API = "https://gateway.paginale.com/add-charges";
 // const CHARGE_API1 = "http://localhost:3002/master-handler/apps/codify";
 // const RETURN_API = "https://codify.paginale.com/";
-// const params = window.location.search.split("?")[1].split("&");
+const params = window.location.search.split("?")[1].split("&");
 let token ="";
 let shop = "";
 if(window.location.search.split("?")[1].split("&")[1].split("=")[0] === "signature" ){
@@ -34,7 +34,7 @@ class PricingService {
     addBasicCharge_month(){
 
         const charges ={
-            plan:"basic_month",
+            plan:"basic",
             shop:shop,
             token:token
         };
@@ -42,7 +42,7 @@ class PricingService {
     }
     addBasicCharge_yearly(){
             const charges ={
-                plan:"basic_year",
+                plan:"basic",
                 shop:shop,
                 token:token
         };
@@ -51,7 +51,7 @@ class PricingService {
     //---------------------------------------- Creative Plan --------------------------------------------------------
     addCreativeCharge_monthly(){
         const charges ={
-            plan:"creative_month",
+            plan:"creative",
             shop:shop,
             token:token
         };
@@ -59,7 +59,7 @@ class PricingService {
     }
     addCreativeCharge_yearly(){
         const charges ={
-            plan:"creative_year",
+            plan:"creative",
             shop:shop,
             token:token
         };
@@ -68,7 +68,7 @@ class PricingService {
     //---------------------------------------- Premium Plan --------------------------------------------------------
     addPremiumCharge_monthly(){
         const charges ={
-            plan:"premium_month",
+            plan:"premium",
             shop:shop,
             token:token
         };
@@ -76,7 +76,7 @@ class PricingService {
     }
     addPremiumCharge_yearly(){
         const charges ={
-            plan:"premium_year",
+            plan:"premium",
             shop:shop,
             token:token
         };
