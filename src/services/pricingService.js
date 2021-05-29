@@ -1,24 +1,28 @@
 import axios from 'axios';
 // import interceptor from '../utils/interceptor';
 
-    const CHARGE_API = "http://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
+const CHARGE_API = "https://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
 // const CHARGE_API = "https://gateway.paginale.com/add-charges";
 // const CHARGE_API1 = "http://localhost:3002/master-handler/apps/codify";
 // const RETURN_API = "https://codify.paginale.com/";
 const params = window.location.search.split("?")[1].split("&");
 let token ="";
 let shop = "";
-if(window.location.search.split("?")[1].split("&")[1].split("=")[0] === "signature" ){
-    const signature= window.location.search.split("?")[1].split("&")[1].split("=")[1];
-    window.open("https://mystoreofdev.myshopify.com/admin/charges/21792620684/confirm_recurring_application_charge?signature"+
-        signature)
-}else{
-     token = window.location.search.split("?")[1].split("&")[1].split("=")[1]
-     shop = window.location.search.split("?")[1].split("&")[2].split("=")[1]
-    console.log(shop)
-    console.log(token)
-    console.log(window.location.search.split("?")[1].split("&"))
-}
+token = window.location.search.split("?")[1].split("&")[1].split("=")[1];
+shop = window.location.search.split("?")[1].split("&")[2].split("=")[1];
+console.log(shop);
+console.log(token);
+// if(window.location.search.split("?")[1].split("&")[1].split("=")[0] === "signature" ){
+//     const signature= window.location.search.split("?")[1].split("&")[1].split("=")[1];
+//     window.open("https://mystoreofdev.myshopify.com/admin/charges/21792620684/confirm_recurring_application_charge?signature"+
+//         signature)
+// }else{
+//      token = window.location.search.split("?")[1].split("&")[1].split("=")[1]
+//      shop = window.location.search.split("?")[1].split("&")[2].split("=")[1]
+//     console.log(shop)
+//     console.log(token)
+//     console.log(window.location.search.split("?")[1].split("&"))
+// }
 
 
 class PricingService {
