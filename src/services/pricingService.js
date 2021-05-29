@@ -33,7 +33,7 @@ class PricingService {
             shop:shop,
             token:token
         };
-         return axios.post(CHARGE_API, charges,{ crossdomain: true });
+         return axios.post(CHARGE_API, charges);
     }
     addBasicCharge_month(){
 
