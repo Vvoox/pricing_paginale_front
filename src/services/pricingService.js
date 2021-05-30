@@ -35,7 +35,7 @@ class PricingService {
             shop:shop,
             token:token
         };
-        return axios.post(CHARGE_API, charges);
+        return axios.post("https://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial", charges);
     }
     addBasicCharge_month(){
 
