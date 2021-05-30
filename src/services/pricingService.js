@@ -33,7 +33,7 @@ class PricingService {
             shop:shop,
             token:token
         };
-         return axios.post(CHARGE_API, charges,{headers: {'Access-Control-Allow-Origin': '*'}});
+         return axios.post(CHARGE_API, charges);
     }
     addBasicCharge_month(){
 
