@@ -50,8 +50,8 @@ function App() {
   //   )
   // }
 
-    const startedFreePlan = (e) => {PricingService.addFreeCharge().then(r => {window.location.replace(r.data);});}
-    const startedBasicPlanMonthly= (e) => {PricingService.addBasicCharge_month().then(r => {window.location.replace(r.data);});}
+    const startedFreePlan = (e) => {PricingService.addFreeCharge();}
+    const startedBasicPlanMonthly= (e) => {PricingService.addBasicCharge_month();}
     const startedCreativePlanMonthly= (e) => {PricingService.addCreativeCharge_monthly().then(r => {window.location.replace(r.data);});}
     const startedPreiumPlanMonthly= (e) => {PricingService.addPremiumCharge_monthly().then(r => {window.location.replace(r.data);});}
 

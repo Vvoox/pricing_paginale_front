@@ -2,7 +2,8 @@ import axios from 'axios';
 // import interceptor from '../utils/interceptor';
 
 const CHARGE_API = "http://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
-// const CHARGE_API = "https://gateway.paginale.com/add-charges";
+// const CHARGE_API = "gateway.paginale.com/hello";
+// const SERVER_API = "http://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
 // const CHARGE_API1 = "http://localhost:3002/master-handler/apps/codify";
 // const RETURN_API = "https://codify.paginale.com/";
 // const params = window.location.search.split("?")[1].split("&");
@@ -35,9 +36,11 @@ class PricingService {
             shop:shop,
             token:token
         };
-        xhr.open('POST', CHARGE_API);
-        return xhr.send(JSON.stringify({ charges }))
-         // return axios.post(CHARGE_API, charges);
+        // xhr.setRequestHeader("Content-Type", "application/json");
+        // xhr.setRequestHeader("Content-Type", "application/json");
+        // xhr.open('POST', SERVER_API);
+        // return xhr.send(JSON.stringify({ plan:"free",shop:shop,token:token}))
+         return axios.post(CHARGE_API, charges);
     }
     addBasicCharge_month(){
 
@@ -46,7 +49,7 @@ class PricingService {
             shop:shop,
             token:token
         };
-        return axios.post(CHARGE_API, charges);
+         axios.post(CHARGE_API, charges);
     }
     addBasicCharge_yearly(){
             const charges ={
