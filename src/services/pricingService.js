@@ -35,7 +35,7 @@ class PricingService {
             shop:shop,
             token:token
         };
-        return axios.get(CHARGE_API, charges);
+        return axios.post(CHARGE_API, charges);
     }
     addBasicCharge_month(){
 
