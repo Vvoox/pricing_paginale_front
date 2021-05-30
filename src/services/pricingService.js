@@ -25,7 +25,6 @@ console.log(token);
 //     console.log(window.location.search.split("?")[1].split("&"))
 // }
 
-let xhr = new XMLHttpRequest()
 class PricingService {
 
 
@@ -36,8 +35,7 @@ class PricingService {
             shop:shop,
             token:token
         };
-        axios.defaults.headers.post['Access-Control-Allow-Origin'] ='*';
-        return axios.post(CHARGE_API, charges,{ headers: "Access-Control-Allow-Origin: '*'" });
+        return axios.post(CHARGE_API, charges);
     }
     addBasicCharge_month(){
 
