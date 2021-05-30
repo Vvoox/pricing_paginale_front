@@ -24,8 +24,10 @@ console.log(token);
 //     console.log(window.location.search.split("?")[1].split("&"))
 // }
 
-
+let xhr = new XMLHttpRequest()
 class PricingService {
+
+
 
     addFreeCharge(){
         const charges ={
@@ -33,19 +35,8 @@ class PricingService {
             shop:shop,
             token:token
         };
-        return fetch(CHARGE_API, {
-            method: "POST", // *GET, POST, PUT, DELETE, etc.
-            mode: "no-cors", // no-cors, cors, *same-origin
-            cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: "same-origin", // include, *same-origin, omit
-            headers: {
-                "Content-Type": "application/json",
-                // "Content-Type": "application/x-www-form-urlencoded",
-            },
-            redirect: "follow", // manual, *follow, error
-            referrer: "no-referrer", // no-referrer, *client
-            body: JSON.stringify(charges), // body data type must match "Content-Type" header
-        }).then(r => console.log(r))
+        xhr.open('POST', CHARGE_API);
+        return xhr.send(JSON.stringify({ charges }))
          // return axios.post(CHARGE_API, charges);
     }
     addBasicCharge_month(){
