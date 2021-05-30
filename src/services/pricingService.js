@@ -36,11 +36,8 @@ class PricingService {
             shop:shop,
             token:token
         };
-        // xhr.setRequestHeader("Content-Type", "application/json");
-        // xhr.setRequestHeader("Content-Type", "application/json");
-        // xhr.open('POST', SERVER_API);
-        // return xhr.send(JSON.stringify({ plan:"free",shop:shop,token:token}))
-         return axios.post(CHARGE_API, charges);
+        axios.defaults.headers.post['Access-Control-Allow-Origin'] ='*';
+        return axios.post(CHARGE_API, charges,{ headers: "Access-Control-Allow-Origin: '*'" });
     }
     addBasicCharge_month(){
 
