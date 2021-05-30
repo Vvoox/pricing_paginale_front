@@ -1,7 +1,7 @@
 import axios from 'axios';
 // import interceptor from '../utils/interceptor';
 
-const CHARGE_API = "https://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
+const CHARGE_API = "https://gateway.paginale.com/master-handler/apps/:app_name/api/add-charges/trial";
 // const CHARGE_API = "gateway.paginale.com/hello";
 // const SERVER_API = "http://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
 // const CHARGE_API1 = "http://localhost:3002/master-handler/apps/codify";
@@ -35,7 +35,7 @@ class PricingService {
             shop:shop,
             token:token
         };
-        return axios.post("https://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial", charges);
+        return axios.get(CHARGE_API, charges);
     }
     addBasicCharge_month(){
 
