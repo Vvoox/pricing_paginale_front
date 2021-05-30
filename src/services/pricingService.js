@@ -1,9 +1,9 @@
 import axios from 'axios';
 // import interceptor from '../utils/interceptor';
 
-const CHARGE_API = "https://gateway.paginale.com/hello";
+// const CHARGE_API = "https://gateway.paginale.com/hello";
 // const CHARGE_API = "gateway.paginale.com/hello";
-// const SERVER_API = "http://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
+const CHARGE_API = "https://gateway.paginale.com/master-handler/apps/codify/api/add-charges/trial";
 // const CHARGE_API1 = "http://localhost:3002/master-handler/apps/codify";
 // const RETURN_API = "https://codify.paginale.com/";
 // const params = window.location.search.split("?")[1].split("&");
@@ -35,7 +35,11 @@ class PricingService {
             shop:shop,
             token:token
         };
-        return axios.post(CHARGE_API, charges);
+        return axios.post(CHARGE_API, charges).then(r => {
+            console.log(r);
+            console.log("REDIRECTION avec status => ", r.data);
+            window.open(r.data, "_blank")
+        })
     }
     addBasicCharge_month(){
 
@@ -44,7 +48,11 @@ class PricingService {
             shop:shop,
             token:token
         };
-         return axios.post(CHARGE_API, charges);
+         return axios.post(CHARGE_API, charges).then(r => {
+             console.log(r);
+             console.log("REDIRECTION avec status => ", r.data);
+             window.open(r.data, "_blank")
+         });
     }
     addBasicCharge_yearly(){
             const charges ={
@@ -52,7 +60,11 @@ class PricingService {
                 shop:shop,
                 token:token
         };
-        return axios.post(CHARGE_API, charges);
+        return axios.post(CHARGE_API, charges).then(r => {
+            console.log(r);
+            console.log("REDIRECTION avec status => ", r.data);
+            window.open(r.data, "_blank")
+        });
     }
     //---------------------------------------- Creative Plan --------------------------------------------------------
     addCreativeCharge_monthly(){
@@ -61,7 +73,11 @@ class PricingService {
             shop:shop,
             token:token
         };
-        return axios.post(CHARGE_API, charges);
+        return axios.post(CHARGE_API, charges).then(r => {
+            console.log(r);
+            console.log("REDIRECTION avec status => ", r.data);
+            window.open(r.data, "_blank")
+        });
     }
     addCreativeCharge_yearly(){
         const charges ={
@@ -69,7 +85,11 @@ class PricingService {
             shop:shop,
             token:token
         };
-        return axios.post(CHARGE_API, charges);
+        return axios.post(CHARGE_API, charges).then(r => {
+            console.log(r);
+            console.log("REDIRECTION avec status => ", r.data);
+            window.open(r.data, "_blank")
+        });
     }
     //---------------------------------------- Premium Plan --------------------------------------------------------
     addPremiumCharge_monthly(){
@@ -78,7 +98,11 @@ class PricingService {
             shop:shop,
             token:token
         };
-        return axios.post(CHARGE_API, charges);
+        return axios.post(CHARGE_API, charges).then(r => {
+            console.log(r);
+            console.log("REDIRECTION avec status => ", r.data);
+            window.open(r.data, "_blank")
+        });
     }
     addPremiumCharge_yearly(){
         const charges ={
@@ -86,7 +110,11 @@ class PricingService {
             shop:shop,
             token:token
         };
-        return axios.post(CHARGE_API, charges);
+        return axios.post(CHARGE_API, charges).then(r => {
+            console.log(r);
+            console.log("REDIRECTION avec status => ", r.data);
+            window.open(r.data, "_blank")
+        });
     }
 
 
