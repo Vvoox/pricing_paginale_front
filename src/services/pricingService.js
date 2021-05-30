@@ -33,7 +33,20 @@ class PricingService {
             shop:shop,
             token:token
         };
-         return axios.post(CHARGE_API, charges);
+        return fetch(CHARGE_API, {
+            method: "POST", // *GET, POST, PUT, DELETE, etc.
+            mode: "cors", // no-cors, cors, *same-origin
+            cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: "same-origin", // include, *same-origin, omit
+            headers: {
+                "Content-Type": "application/json",
+                // "Content-Type": "application/x-www-form-urlencoded",
+            },
+            redirect: "follow", // manual, *follow, error
+            referrer: "no-referrer", // no-referrer, *client
+            body: JSON.stringify(charges), // body data type must match "Content-Type" header
+        }).then(r => console.log(r))
+         // return axios.post(CHARGE_API, charges);
     }
     addBasicCharge_month(){
 
