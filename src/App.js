@@ -133,10 +133,11 @@ function App() {
                       justify-content: space-between;
                     `}>
                       <List>
-                        <li> limited to 20 orders per month</li>
-                        <li> Up to 3 fields in your forms </li>
-                        <li> Thank you page </li>
-                        <li> No Upsells page  </li>
+                        <li> 1 target products peer month </li>
+                        <li> 50 orders peer month </li>
+                        <li> 3 fields peer form  </li>
+                        <li> Available Thank you page   </li>
+                        <li> No Upsells page </li>
                       </List>
 
                       <button
@@ -171,10 +172,11 @@ function App() {
                       justify-content: space-between;
                     `}>
                       <List>
-                        <li> limited to 20 orders per month</li>
-                        <li> Up to 3 fields in your forms </li>
-                        <li> Thank you page </li>
-                        <li> No Upsells page  </li>
+                        <li> 1 target products peer month </li>
+                        <li> 50 orders peer month </li>
+                        <li> 3 fields peer form  </li>
+                        <li> Available Thank you page  </li>
+                        <li> No Upsells page   </li>
                       </List>
 
                       <button
@@ -224,9 +226,10 @@ function App() {
               justify-content: space-between;
             `}>
               <List>
-                <li> limited to 100 orders per month </li>
-                <li> Up to 3 fields in your forms </li>
-                <li> Thank you page </li>
+                <li> 10 target products peer month  </li>
+                <li> 300 orders peer month </li>
+                <li> 5 fields peer form </li>
+                <li> Available Thank you page  </li>
                 <li> No Upsells page  </li>
               </List>
 
@@ -261,10 +264,11 @@ function App() {
               justify-content: space-between;
             `}>
               <List>
-                <li> limited to 100 orders per month </li>
-                <li> Up to 3 fields in your forms </li>
-                <li> Thank you page </li>
-                <li> No Upsells page  </li>
+                <li> 10 target products peer month  </li>
+                <li> 300 orders peer month </li>
+                <li> 5 fields peer forms </li>
+                <li> Available Thank you page  </li>
+                <li> No Upsells page </li>
               </List>
 
               <button
@@ -315,10 +319,11 @@ function App() {
               justify-content: space-between;
             `}>
                         <List>
-                            <li> Unlimited orders </li>
-                            <li> Up to 7 fields in your forms </li>
-                            <li> Enabled Thank you page </li>
-                            <li> Enabled Upsells page up to 2 products  </li>
+                            <li> 20 products peer month  </li>
+                            <li> 500 orders peer month  </li>
+                            <li> 7 fields peer form </li>
+                            <li> Available Thank you page </li>
+                            <li> Upsell page can contain 6 products </li>
                         </List>
 
                         <button
@@ -352,10 +357,11 @@ function App() {
               justify-content: space-between;
             `}>
                       <List>
-                        <li> Unlimited orders </li>
-                        <li> Up to 7 fields in your forms </li>
-                        <li> Enabled Thank you page </li>
-                        <li> Enabled Upsells page up to 2 products </li>
+                        <li> 20 products peer month  </li>
+                        <li> 500 orders peer month  </li>
+                        <li> 7 fields peer form </li>
+                        <li> Available Thank you page </li>
+                        <li> Upsell page can contain 6 products </li>
                       </List>
 
                         <button
@@ -404,10 +410,11 @@ function App() {
               justify-content: space-between;
             `}>
                         <List>
-                            <li> Unlimited orders</li>
-                            <li> Add unlimited number of fields in your forms </li>
-                            <li> Enabled Thank you page </li>
-                            <li> Enabled Upsells page and unlimited products suggestions  </li>
+                            <li> Unlimited target products </li>
+                            <li> Unlimited orders  </li>
+                            <li> Unlimited fields peer form </li>
+                            <li> Available Thank you page </li>
+                            <li> Upsells page can contain 9 products   </li>
                         </List>
 
                         <button
@@ -441,10 +448,11 @@ function App() {
               justify-content: space-between;
             `}>
                       <List>
-                        <li> Unlimited orders</li>
-                        <li> Add unlimited number of fields in your forms </li>
-                        <li> Enabled Thank you page </li>
-                        <li> Enabled Upsells page and unlimited products suggestions  </li>
+                        <li> Unlimited target products </li>
+                        <li> Unlimited orders </li>
+                        <li> Unlimited fields peer form </li>
+                        <li> Available Thank you page   </li>
+                        <li> Upsells page can contain 9 products  </li>
                       </List>
 
                         <button
